@@ -1,0 +1,32 @@
+<div class="mt-5">
+
+    <form action="<%=search_recipes_path%>" method="POST">
+        <div class="input-group">
+
+              <input name="title" type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="submit">Search</button>
+              </span>
+            </div>
+    </form>
+  
+    <table class="table table-striped mt-5">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Ingredients</th>
+          <th>Thumbnail</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @recipes.each do |recipe| %>
+          <tr>
+            <td><%= link_to(recipe['title'],recipe['href']) %></td>
+            <td><%= recipe['ingredients'] %></td>
+            <td><%=image_tag((recipe['thumbnail'].blank? ? "/no_picture.jpg" : recipe['thumbnail']), alt: "Recipe Picture", class: "menu_icon")%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
