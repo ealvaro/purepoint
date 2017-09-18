@@ -17,3 +17,6 @@ A recipe finder app using the RecipePuppy API: ​ http://www.recipepuppy.com/ab
 1. How well the requirements above are met 
 2. Code quality 
 3. The simplicity and extensibility of the approach taken 
+
+P.D.
+#### Make sure you rename config/env.yml to local_env.yml  ####
