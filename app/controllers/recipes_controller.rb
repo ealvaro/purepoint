@@ -23,8 +23,8 @@ class RecipesController < ApplicationController
     end
 
     def get_20_api(title)
-      recipes10 = JSON.parse(HTTParty.get("http://www.recipepuppy.com/api/?q=#{title}"))["results"]
-      recipes20 = JSON.parse(HTTParty.get("http://www.recipepuppy.com/api/?q=#{title}&p=2"))["results"]
+      recipes10 = JSON.parse(HTTParty.get("#{ENV['RECIPE_API_URL']}?q=#{title}"))["results"]
+      recipes20 = JSON.parse(HTTParty.get("#{ENV['RECIPE_API_URL']}?q=#{title}&p=2"))["results"]
       (recipes10 << recipes20).flatten!
     end
 end
