@@ -1,3 +1,5 @@
+Just recently, (09/2017), I was asked by a potential employer to create in a couple of hours a very simple, quick Ruby on Rails website demonstrating search functionality using a third-party API and latest bootstrap 4 look and feel. It actually took me a whole day to complete it because I recorded a Youtube video on how I did it. These are the project specs sent by the employer  and you can find the video at https://www.youtube.com/watch?v=oXgXSdTt4I0
+
 # Technical Interview: Ruby Test #
 A mini test using the RecipePuppy API 
  
