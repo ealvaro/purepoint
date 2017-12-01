@@ -23,8 +23,14 @@ class RecipesController < ApplicationController
     end
 
     def get_20_api(title)
-      recipes10 = JSON.parse(HTTParty.get("#{ENV['RECIPE_API_URL']}?q=#{title}"))["results"]
-      recipes20 = JSON.parse(HTTParty.get("#{ENV['RECIPE_API_URL']}?q=#{title}&p=2"))["results"]
-      (recipes10 << recipes20).flatten!
+      first = HTTParty.get("#{ENV['RECIPE_API_URL']}?q=#{title}")
+      recipes10 = JSON.parse(first)["results"] if first.response.code == "200"
+      second = HTTParty.get("#{ENV['RECIPE_API_URL']}?q=#{title}&p=2")
+      recipes20 = JSON.parse(second)["results"] if second.response.code == "200"
+      if recipes10 && recipes20
+        return (recipes10 << recipes20).flatten! 
+      else
+        return recipes10
+      end
     end
 end

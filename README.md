@@ -20,5 +20,14 @@ A recipe finder app using the RecipePuppy API: ​ http://www.recipepuppy.com/ab
 2. Code quality 
 3. The simplicity and extensibility of the approach taken 
 
-P.D.
-#### Make sure you rename config/env.yml to local_env.yml  ####
+#### P.D.####
+Make sure you rename config/env.yml to local_env.yml  
+
+### Initial Steps taken to start the project ###
+
+```shell
+rails new purepoint
+cd purepoint
+vim Gemfile #Add HTTParty
+rails g scaffold recipe title href ingredients thumbnail
+```
